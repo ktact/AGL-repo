@@ -1,0 +1,12 @@
+[Unit]
+Requires=agl-compositor.service
+After=agl-compositor.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/homescreen
+ExecStart=/usr/bin/homescreen
+Restart=on-failure
+
+[Install]
+WantedBy=agl-session.target
